@@ -1,0 +1,86 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  # move intent:
+  - move:
+      use_entities:
+        - movement_direction
+        - movement_speed
+  # interact intent:
+  - interact:
+      use_entities:
+        - object_name
+
+entities: 
+  - movement_direction
+  - movement_speed
+  - object_name
+
+slots:
+  movement_direction:
+  # in terms of simplicity type could be changed to categorical
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: movement_direction
+    initial_value: forward
+
+  movement_speed:
+  # in terms of simplicity type could be changed to categorical
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: movement_speed
+    initial_value: normal
+
+  object_name:
+  # in terms of simplicity type could be changed to categorical
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: object_name
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_did_that_help:
+  - text: "Did that help you?"
+  utter_happy:
+  - text: "Great, carry on!"
+  utter_goodbye:
+  - text: "Bye"
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  # intent interact
+  utter_interact:
+  - text: "Processing with the {object_name}"
+  - text: "Did what you asked me to do with the {object_name}"
+  - text: "I interacted with the {object_name}"
+
+  # intent move
+  utter_move:
+  - text: "I moved {movement_direction} with {movement_speed} speed"
+  - text: "I am here. Came as {movement_speed} as I could"
+  - text: "I am going {movement_direction} {movement_speed}"
+
+actions: 
+- utter_interact
+- utter_move
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

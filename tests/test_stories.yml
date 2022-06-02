@@ -1,0 +1,144 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy path 1
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      yes
+    intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      not really
+    intent: deny
+  - action: utter_goodbye
+
+- story: sad path 3
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      very terrible
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      no
+    intent: deny
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - user: |
+      are you a bot?
+    intent: bot_challenge
+  - action: utter_iamabot
+
+# move 
+- story: movement
+  steps:
+  - user: |
+      go right
+    intent: move
+  #   entities: 
+  #   - movement_direction: right
+  # - slot_was_set:
+  #   - movement_direction: right
+  # # - set_slot: {movement_direction: right}
+  - action: utter_move
+  
+- story: movement 2
+  steps:
+  - user: |
+      go left fast
+    intent: move
+  #   entities: 
+  #   - movement_direction: left
+  #   - movement_speed: fast
+  # - slot_was_set:
+  #   - movement_direction: left
+  #   - movement_speed: fast
+  # # - set_slot: {movement_direction: left}
+  # # - set_slot: {movement_speed: fast}
+  - action: utter_move
+  
+- story: movement 3
+  steps:
+  - user: |
+      run right
+    intent: move
+  #   entities:
+  #   - movement_direction: right
+  # - slot_was_set:
+  #   - movement_direction: right
+  # # - set_slot: {movement_direction: right}
+  - action: utter_move
+
+# interact
+- story: interaction with an object
+  steps:
+  - user: |
+      pick up a key
+    intent: interact
+  #   entities: 
+  #   - object_name: key
+  # - slot_was_set:
+  #   - object_name: key
+  # # - set_slot: {object_name: key}
+  - action: utter_interact

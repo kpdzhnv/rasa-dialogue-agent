@@ -1,0 +1,10 @@
+[
+  {
+    "name": "movement_direction",
+    "pattern": "(\\bright\\b|\\bleft\\b|\\bforward\\b|\\bbackward\\b)"
+  },
+  {
+    "name": "movement_speed",
+    "pattern": "(\\bfast\\b|\\bslow\\b)"
+  }
+]

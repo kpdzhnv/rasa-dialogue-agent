@@ -1,0 +1,14 @@
+[
+  {
+    "name": "object_name",
+    "pattern": "(\\bkey\\b|\\bdoor\\b|\\bflashlight\\b)"
+  },
+  {
+    "name": "movement_direction",
+    "pattern": "(\\bright\\b|\\bleft\\b|\\bforward\\b|\\bbackward\\b)"
+  },
+  {
+    "name": "movement_speed",
+    "pattern": "(\\bfast\\b|\\bslow\\b)"
+  }
+]

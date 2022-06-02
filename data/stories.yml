@@ -1,0 +1,83 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+# move 
+- story: movement
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: move
+  #   entities: 
+  #   - movement_direction: right
+  # - slot_was_set:
+  #   - movement_direction: right
+  # # - set_slot: {movement_direction: right}
+  - action: utter_move
+  
+- story: movement 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: move
+  #   entities: 
+  #   - movement_direction: left
+  #   - movement_speed: fast
+  # - slot_was_set:
+  #   - movement_direction: left
+  #   - movement_speed: fast
+  # # - set_slot: {movement_direction: left}
+  # # - set_slot: {movement_speed: fast}
+  - action: utter_move
+  
+- story: movement 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: move
+  #   entities:
+  #   - movement_direction: right
+  # - slot_was_set:
+  #   - movement_direction: right
+  # # - set_slot: {movement_direction: right}
+  - action: utter_move
+
+# interact
+- story: interaction with an object
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: interact
+  #   entities: 
+  #   - object_name: key
+  # - slot_was_set:
+  #   - object_name: key
+  # # - set_slot: {object_name: key}
+  - action: utter_interact

@@ -87,7 +87,7 @@ responses:
   - text: "My name is Blu."
 
   # intent give_advice
-  utter_move:
+  utter_give_advice:
   - text: "I can go somewhere if you tell me to."
   - text: "I can interact with some objects."
   - text: "I can move around and interact with objects."

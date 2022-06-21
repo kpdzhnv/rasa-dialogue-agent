@@ -21,7 +21,7 @@ stories:
   - action: utter_greet
   - user: |
       amazing
-    intent: mood_great
+    intent: mood_happy
   - action: utter_happy
   - user: |
       bye-bye!
@@ -37,11 +37,6 @@ stories:
   - user: |
       not good
     intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
   - action: utter_happy
 
 - story: sad path 2
@@ -53,11 +48,6 @@ stories:
   - user: |
       not good
     intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
   - action: utter_goodbye
 
 - story: sad path 3
@@ -69,11 +59,6 @@ stories:
   - user: |
       very terrible
     intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
   - action: utter_goodbye
 
 - story: say goodbye

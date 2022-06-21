@@ -1,13 +1,16 @@
-version: "3.1"
+version: "3.0"
 
 intents:
   - greet
   - goodbye
   - affirm
   - deny
-  - mood_great
+  - mood_happy
   - mood_unhappy
+  - mood_scared
   - bot_challenge
+  # ask for advice intent:
+  - ask_advice
   # move intent:
   - move:
       use_entities:
@@ -52,32 +55,57 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-  utter_did_that_help:
-  - text: "Did that help you?"
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Hey..."
+  - text: "Hi"
+  - text: "Hi, please help me to get out of here"
   utter_goodbye:
-  - text: "Bye"
+  - text: "Bye..."
+  - text: "Oh, you are leaving already? Ok, bye"
+  - text: "You are leaving me... Just like my family did..."
+  utter_affirm:
+  - text: "Yes."
+  - text: "Uh-huh"
+  - text: "Ok, Yes."
+  utter_deny:
+  - text: "No"
+  - text: "Nooo"
+  - text: "..."
+  utter_happy:
+  - text: "I hope I`ll get out of here safely"
+  - text: "I wonder where is everyone..."
+  - text: "That`s good to hear"
+  utter_unhappy:
+  - text: "I will never get out of here, will I?"
+  - text: "everyone is gone..."
+  - text: "That`s sad to hear"
+  utter_scared:
+  - text: "I will never get out of here, will I?"
+  - text: "AAAAAAHHHHHH"
+  - text: "Oh no! I am so scared!!!"
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am Blu, I am alone in a bunker."
+  - text: "My name is Blu."
+
+  # intent give_advice
+  utter_move:
+  - text: "I can go somewhere if you tell me to."
+  - text: "I can interact with some objects."
+  - text: "I can move around and interact with objects."
 
   # intent interact
   utter_interact:
-  - text: "Processing with the {object_name}"
-  - text: "Did what you asked me to do with the {object_name}"
-  - text: "I interacted with the {object_name}"
+  - text: "Processing with the {object_name}."
+  - text: "Did what you asked me to do with the {object_name}."
+  - text: "I interacted with the {object_name}."
 
   # intent move
   utter_move:
-  - text: "I moved {movement_direction} with {movement_speed} speed"
-  - text: "I am here. Came as {movement_speed} as I could"
-  - text: "I am going {movement_direction} {movement_speed}"
+  - text: "I moved {movement_direction}, {movement_speed}."
+  - text: "I am here. Came with {movement_speed} speed."
+  - text: "I am going {movement_direction} {movement_speed}."
 
 actions: 
+- utter_give_advice
 - utter_interact
 - utter_move
 

@@ -6,17 +6,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
+  - intent: mood_happy
   - action: utter_happy
 
 - story: sad path 2
@@ -40,6 +30,7 @@ stories:
   - action: utter_move
 
 - story: multiple tasks path
+  steps:
   - intent: bot_challenge
   - action: utter_iamabot
   - intent: interact
@@ -59,6 +50,7 @@ stories:
   - action: utter_move
 
 - story: interact path
+  steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_scared

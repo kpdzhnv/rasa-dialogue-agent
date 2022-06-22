@@ -12,17 +12,20 @@ nlu:
     - moin
     - hey there
     - let's go
-    - hey dude
+    - hey Blu
     - goodmorning
     - goodevening
     - good afternoon
+    - hi, Blu
 
 - intent: goodbye
   examples: |
     - cu
     - good by
-    - cee you later
+    - see you later
+    - see you
     - good night
+    - bye, Blu
     - bye
     - goodbye
     - have a nice day
@@ -32,12 +35,16 @@ nlu:
 
 - intent: affirm
   examples: |
+    - yes, Blu
     - yes
     - y
     - indeed
     - of course
     - that sounds good
+    - correct, Blu
     - correct
+    - yup
+    - sure
 
 - intent: deny
   examples: |
@@ -48,18 +55,20 @@ nlu:
     - don't like that
     - no way
     - not really
+    - NO BLU
+    - noooooo
 
-- intent: mood_great
+- intent: mood_happy
   examples: |
     - perfect
     - great
-    - amazing
+    - amazing, Blu
     - feeling like a king
     - wonderful
-    - I am feeling very good
+    - Blu, I am feeling very good
     - I am great
     - I am amazing
-    - I am going to save the world
+    - Blu, I am going to save the world
     - super stoked
     - extremely good
     - so so perfect
@@ -70,7 +79,7 @@ nlu:
   examples: |
     - my day was horrible
     - I am sad
-    - I don't feel very well
+    - Blu, I don't feel very well
     - I am disappointed
     - super sad
     - I'm so sad
@@ -83,12 +92,38 @@ nlu:
     - so saad
     - so sad
 
+- intent: mood_scared
+  examples: |
+    - I am frightened
+    - I am afraid
+    - Blu, I am scared
+    - super scared
+    - boo!
+    - scared
+    - very scared
+    - I am worried
+    - it scares me
+    - I feel scared
+    - extremly scared
+    - AAAAAHHH
+    - so scared
+
 - intent: bot_challenge
   examples: |
+    - Who are you?
+    - What is your purpose?
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: give_advice
+  examples: |
+    - Blu, can you give me an advice?
+    - What can I do to help you?
+    - What can yopu do? 
+    - How can I help? 
+    - What should I do, Blu?
 
 # intent move
 - intent: move

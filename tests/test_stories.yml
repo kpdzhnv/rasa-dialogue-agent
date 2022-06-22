@@ -10,7 +10,7 @@ stories:
   - action: utter_greet
   - user: |
       amazing
-    intent: mood_great
+    intent: mood_happy
   - action: utter_happy
 
 - story: happy path 2

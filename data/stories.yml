@@ -62,3 +62,45 @@ stories:
     - object_name: screwdriver
   - action: utter_interact
 
+- story: advice path
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: ask_advice
+  - action: utter_give_advice
+
+- story: interact advice path 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: ask_advice
+  - action: utter_give_advice
+  - intent: interact
+    entities:
+    - object_name: key
+  - slot_was_set:
+    - object_name: key
+  - action: utter_interact
+  - intent: interact
+    entities:
+    - object_name: key
+  - action: utter_interact
+  - intent: interact
+    entities:
+    - object_name: door
+  - slot_was_set:
+    - object_name: door
+  - action: utter_interact
+  - intent: interact
+    entities:
+    - object_name: door
+  - action: utter_interact
+  - intent: move
+    entities:
+    - movement_direction: left
+  - slot_was_set:
+    - movement_direction: left
+  - action: utter_move

@@ -66,6 +66,7 @@ responses:
   - text: "Yes."
   - text: "Uh-huh"
   - text: "Ok, Yes."
+  - text: "I think so"
   utter_deny:
   - text: "No"
   - text: "Nooo"
@@ -78,15 +79,16 @@ responses:
   - text: "I will never get out of here, will I?"
   - text: "everyone is gone..."
   - text: "That`s sad to hear"
+  # after user says that they are scared
   utter_scared:
   - text: "I will never get out of here, will I?"
   - text: "AAAAAAHHHHHH"
-  - text: "Oh no! I am so scared!!!"
+  - text: "Oh no! I am so scared too!!!"
   utter_iamabot:
   - text: "I am Blu, I am alone in a bunker."
   - text: "My name is Blu."
 
-  # intent give_advice
+  # intent ask advice
   utter_give_advice:
   - text: "I can go somewhere if you tell me to."
   - text: "I can interact with some objects."

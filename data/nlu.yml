@@ -60,6 +60,9 @@ nlu:
 
 - intent: mood_happy
   examples: |
+    - i am fine now
+    - better now
+    - I am feeling better
     - perfect
     - great
     - amazing, Blu
@@ -117,11 +120,11 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- intent: give_advice
+- intent: ask_advice
   examples: |
     - Blu, can you give me an advice?
     - What can I do to help you?
-    - What can yopu do? 
+    - What can you do? 
     - How can I help? 
     - What should I do, Blu?
 

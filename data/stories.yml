@@ -24,60 +24,49 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - action: utter_unhappy
+  - intent: goodbye
   - action: utter_goodbye
 
-# move 
-- story: movement
+- story: move path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: move
-  #   entities: 
-  #   - movement_direction: right
-  # - slot_was_set:
-  #   - movement_direction: right
-  # # - set_slot: {movement_direction: right}
-  - action: utter_move
-  
-- story: movement 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: move
-  #   entities: 
-  #   - movement_direction: left
-  #   - movement_speed: fast
-  # - slot_was_set:
-  #   - movement_direction: left
-  #   - movement_speed: fast
-  # # - set_slot: {movement_direction: left}
-  # # - set_slot: {movement_speed: fast}
-  - action: utter_move
-  
-- story: movement 3
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: move
-  #   entities:
-  #   - movement_direction: right
-  # - slot_was_set:
-  #   - movement_direction: right
-  # # - set_slot: {movement_direction: right}
+    entities:
+    - movement_direction: right
+  - slot_was_set:
+    - movement_direction: right
   - action: utter_move
 
-# interact
-- story: interaction with an object
-  steps:
+- story: multiple tasks path
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: interact
+    entities:
+    - object_name: key
+  - slot_was_set:
+    - object_name: key
+  - action: utter_interact
+  - intent: move
+    entities:
+    - movement_direction: back
+    - movement_speed: slowly
+  - slot_was_set:
+    - movement_direction: back
+  - slot_was_set:
+    - movement_speed: slowly
+  - action: utter_move
+
+- story: interact path
   - intent: greet
   - action: utter_greet
+  - intent: mood_scared
+  - action: utter_scared
   - intent: interact
-  #   entities: 
-  #   - object_name: key
-  # - slot_was_set:
-  #   - object_name: key
-  # # - set_slot: {object_name: key}
+    entities:
+    - object_name: screwdriver
+  - slot_was_set:
+    - object_name: screwdriver
   - action: utter_interact
+

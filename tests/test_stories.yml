@@ -75,55 +75,114 @@ stories:
     intent: bot_challenge
   - action: utter_iamabot
 
+  
+# advice
+- story: advice test path 1
+  steps:
+    - intent: greet
+      user: |-
+        hi
+    - action: utter_greet
+    - intent: ask_advice
+      user: |-
+        Blu, what can you do?
+    - action: utter_give_advice
+
 # move 
-- story: movement
+- story: move test path 1
   steps:
-  - user: |
-      go right
-    intent: move
-  #   entities: 
-  #   - movement_direction: right
-  # - slot_was_set:
-  #   - movement_direction: right
-  # # - set_slot: {movement_direction: right}
+  - intent: move
+    user: |-
+      can you go [forward](movement_direction)?
   - action: utter_move
-  
-- story: movement 2
+  - intent: mood_happy
+    user: |-
+      good
+  - action: utter_happy
+  - intent: move
+    user: |-
+      now go [right](movement_direction) [fast]{"entity": "movement_speed", "value": "go fast"}
+  - slot_was_set:
+    - movement_speed: fast
+  - action: utter_move
+
+# move
+- story: move test path 2
   steps:
-  - user: |
-      go left fast
-    intent: move
-  #   entities: 
-  #   - movement_direction: left
-  #   - movement_speed: fast
-  # - slot_was_set:
-  #   - movement_direction: left
-  #   - movement_speed: fast
-  # # - set_slot: {movement_direction: left}
-  # # - set_slot: {movement_speed: fast}
+    user: |-
+      hi
+  - action: utter_greet
+  - intent: bot_challenge
+    user: |-
+      who are you?
+  - action: utter_iamabot
+  - intent: move
+    user: |-
+      [rush]{"entity": "movement_speed", "value": "fast"} [left](movement_direction)
+  - slot_was_set:
+    - movement_direction: left
+  - slot_was_set:
+    - movement_speed: fast
   - action: utter_move
-  
-- story: movement 3
+
+# move
+- story: move test path 3
   steps:
   - user: |
       run right
-    intent: move
-  #   entities:
-  #   - movement_direction: right
-  # - slot_was_set:
-  #   - movement_direction: right
-  # # - set_slot: {movement_direction: right}
+  - intent: move
+    user: |-
+      go [right](movement_direction)
+  - slot_was_set:
+    - movement_direction: right
   - action: utter_move
 
 # interact
-- story: interaction with an object
+- story: interact test path 1
   steps:
-  - user: |
-      pick up a key
-    intent: interact
-  #   entities: 
-  #   - object_name: key
-  # - slot_was_set:
-  #   - object_name: key
-  # # - set_slot: {object_name: key}
+    - intent: greet
+      user: |-
+        hi
+    - action: utter_greet
+    - intent: interact
+      user: |-
+        pick up a [key](object_name), Blu
+    - slot_was_set:
+      - object_name: key
+    - action: utter_interact
+
+# interact
+- story: interact test path 2
+  steps:
+    - intent: greet
+      user: |-
+        hi
+    - action: utter_greet
+    - intent: interact
+      user: |-
+        Blu, close the [door](object_name)
+    - slot_was_set:
+      - object_name: door
+    - action: utter_interact
+
+# interact
+- story: interact test path 3
+  steps:
+ - intent: interact
+    user: |-
+      get the [flashlight](object_name)
+  - slot_was_set:
+    - object_name: flashlight
+  - action: utter_interact
+  - intent: interact
+    user: |-
+      turn on the [flashlight](object_name)
+  - slot_was_set:
+    - object_name: flashlight
+  - action: utter_interact
+  - intent: interact
+    user: |-
+      put down the [flashlight](object_name)
+  - slot_was_set:
+    - object_name: flashlight
   - action: utter_interact

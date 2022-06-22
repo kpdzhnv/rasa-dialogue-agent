@@ -83,7 +83,7 @@ responses:
   utter_scared:
   - text: "I will never get out of here, will I?"
   - text: "AAAAAAHHHHHH"
-  - text: "Oh no! I am so scared too!!!"
+  - text: "Oh no! I am scared!!!"
   utter_iamabot:
   - text: "I am Blu, I am alone in a bunker."
   - text: "My name is Blu."

@@ -45,12 +45,17 @@ nlu:
     - correct
     - yup
     - sure
+    - yessssss
+    - ok sure
+    - sure
 
 - intent: deny
   examples: |
     - no
     - n
     - never
+    - nah 
+    - oh, no
     - I don't think so
     - don't like that
     - no way
@@ -98,7 +103,7 @@ nlu:
 - intent: mood_scared
   examples: |
     - I am frightened
-    - I am afraid
+    - I am afraid 
     - Blu, I am scared
     - super scared
     - boo!
@@ -119,6 +124,9 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - What are you? 
+    - Can you walk?
+    - Can you pick up objects?
 
 - intent: ask_advice
   examples: |
@@ -127,6 +135,7 @@ nlu:
     - What can you do? 
     - How can I help? 
     - What should I do, Blu?
+    - Blu, what can you do? 
 
 # intent move
 - intent: move

@@ -29,7 +29,7 @@ stories:
     - movement_direction: right
   - action: utter_move
 
-- story: multiple tasks path
+- story: multiple actions path 1
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
@@ -70,7 +70,7 @@ stories:
   - intent: ask_advice
   - action: utter_give_advice
 
-- story: interact advice path 
+- story: multiple actions path 2  
   steps:
   - intent: greet
   - action: utter_greet

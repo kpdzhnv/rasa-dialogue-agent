@@ -106,10 +106,10 @@ responses:
   - text: "I am here. Came with {movement_speed} speed."
   - text: "I am going {movement_direction} {movement_speed}."
 
-actions: 
-- utter_give_advice
-- utter_interact
-- utter_move
+# actions: 
+# - utter_give_advice
+# - utter_interact
+# - utter_move
 
 session_config:
   session_expiration_time: 60

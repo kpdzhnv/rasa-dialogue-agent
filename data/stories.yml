@@ -18,7 +18,21 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: move path
+- story: advice path 1
+  steps:
+  - intent: ask_advice
+  - action: utter_give_advice
+
+- story: advice path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: ask_advice
+  - action: utter_give_advice
+
+- story: move path 1
   steps:
   - intent: greet
   - action: utter_greet
@@ -27,6 +41,19 @@ stories:
     - movement_direction: right
   - slot_was_set:
     - movement_direction: right
+  - action: utter_move
+
+  - story: move path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: move
+    entities:
+    - movement_direction: left
+  - slot_was_set:
+    - movement_direction: left
   - action: utter_move
 
 - story: multiple actions path 1
@@ -61,14 +88,6 @@ stories:
   - slot_was_set:
     - object_name: screwdriver
   - action: utter_interact
-
-- story: advice path
-  - intent: greet
-  - action: utter_greet
-  - intent: bot_challenge
-  - action: utter_iamabot
-  - intent: ask_advice
-  - action: utter_give_advice
 
 - story: multiple actions path 2  
   steps:
